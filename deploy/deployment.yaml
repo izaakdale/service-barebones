@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: barebones-deployment
+  labels:
+    app: service-barebones
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: service-barebones
+  template:
+    metadata:
+      labels:
+        app: service-barebones
+    spec:
+      containers:
+      - name: service-barebones
+        image: 735542962543.dkr.ecr.eu-west-2.amazonaws.com/service-barebones
+        ports:
+        - containerPort: 80
+        resources:
+          requests:
+            memory: "64Mi"
+            cpu: "250m"
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
