@@ -11,4 +11,4 @@ FROM alpine
 COPY --from=builder /service-barebones .
 
 EXPOSE 80
-CMD [ "/service-barebones" ]
+CMD [ "/service-barebones" ]`
