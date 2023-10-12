@@ -16,7 +16,8 @@ spec:
     spec:
       containers:
       - name: service-barebones
-        image: 735542962543.dkr.ecr.eu-west-2.amazonaws.com/service-barebones:latest
+        image: service-barebones
+        imagePullPolicy: Never
         ports:
         - containerPort: 80
         resources:
